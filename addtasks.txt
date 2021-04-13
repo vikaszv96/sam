@@ -1,0 +1,415 @@
+
+<html>
+<head>
+  <title>{{title}}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <link rel='stylesheet' href='C:/Users/em/Desktop/sam/style.css' />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" ></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+.fWyFhS {
+    display: inline-flex;
+    box-shadow: rgb(0, 135, 90) 0px 0px 0px 0px;
+    border-radius: 3px;
+    animation: 0s ease 0s 1 normal none running none;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-article {
+  max-width: 1000px;
+  padding: 50px;
+  margin: 0 auto;
+}
+
+/* Toggle Styles */
+
+#viewport {
+  padding-left: 250px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#content {
+  width: 100%;
+  position: relative;
+  margin-right: 0;
+}
+
+/* Sidebar Styles */
+
+#sidebar {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 250px;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #2a2b3d;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#sidebar header {
+  background-color: #2a2b3d;
+  font-size: 20px;
+  line-height: 52px;
+  text-align: center;
+}
+
+#sidebar header a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+
+#sidebar header a:hover {
+  color: #fff;
+}
+
+#sidebar .nav{
+
+}
+
+#sidebar .nav a{
+  background: none;
+  border-bottom: 1px solid #455A64;
+  color: #fff;
+  font-size: 14px;
+  padding: 16px 24px;
+}
+
+#sidebar .nav a:hover{
+  background: none;
+  color: #4660CC;
+}
+
+#sidebar .nav a i{
+  margin-right: 16px;
+}
+
+
+.custom-select-wrapper {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+}
+  .custom-select-wrapper select {
+    display: none;
+  }
+  .custom-select {
+    position: relative;
+    display: inline-block;
+  }
+  .custom-select-trigger {
+    position: relative;
+    display: block;
+    width: 280px;
+    padding: 0 64px 0 20px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 30px;
+    background: #265a88;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+      .custom-select-trigger:after {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 10px; height: 10px;
+        top: 50%; right: 25px;
+        margin-top: -3px;
+        border-bottom: 1px solid #fff;
+        border-right: 1px solid #fff;
+        transform: rotate(45deg) translateY(-50%);
+        transition: all .4s ease-in-out;
+        transform-origin: 50% 0;
+      }
+      .custom-select.opened .custom-select-trigger:after {
+        margin-top: 3px;
+        transform: rotate(-135deg) translateY(-50%);
+      }
+  .custom-options {
+    position: absolute;
+    display: block;
+    top: 100%; left: 0; right: 0;
+    min-width: 100%;
+    margin: 15px 0;
+    border: 1px solid #b5b5b5;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 1px rgba(0,0,0,.07);
+    background: #fff;
+    transition: all .4s ease-in-out;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-15px);
+    z-index: 1;
+  }
+  .custom-select.opened .custom-options {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+    .custom-options:before {
+      position: absolute;
+      display: block;
+      content: '';
+      bottom: 100%; right: 25px;
+      width: 7px; height: 7px;
+      margin-bottom: -4px;
+      border-top: 1px solid #b5b5b5;
+      border-left: 1px solid #b5b5b5;
+      background: #fff;
+      transform: rotate(45deg);
+      transition: all .4s ease-in-out;
+    }
+    .option-hover:before {
+      background: #f9f9f9;
+    }
+    .custom-option {
+      position: relative;
+      display: block;
+      padding: 0 22px;
+      border-bottom: 1px solid #b5b5b5;
+      font-size: 18px;
+      font-weight: 600;
+      color: #b5b5b5;
+      line-height: 47px;
+      cursor: pointer;
+      transition: all .4s ease-in-out;
+    }
+    .custom-option:first-of-type {
+      border-radius: 4px 4px 0 0;
+    }
+    .custom-option:last-of-type {
+      border-bottom: 0;
+      border-radius: 0 0 4px 4px;
+    }
+    .custom-option:hover,
+    .custom-option.selection {
+      background: #f9f9f9;
+    }
+
+</style>
+<style>
+@media screen and (max-width: 700px) {
+  #sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  #sidebar a {float: left;}
+  content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  #sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="viewport">
+  <!-- Sidebar -->
+  <!-- <div class="wrapper d-flex align-items-stretch"> -->
+
+  <div id="sidebar">
+    <header>
+      <a href="/"><img src="C:/Users/em/Desktop/sam/images/grumpy-removebg-preview-removebg-preview.png" width="50" height="25"> grumpytext</a>
+    </header>
+    <ul class="nav">
+      <li>
+        <a href="#">
+          <i class="zmdi zmdi-view-dashboard"></i>
+        </a>
+      </li>
+      <li>
+        <a href="/profile">
+          <i class="zmdi zmdi-view-dashboard"></i><img src="C:/Users/em/Desktop/sam/images/icon-1961299_1280.png" width="20" height="20">  Dashboard
+        </a>
+      </li>
+      <li id="addtasks">
+        <a href="/addtasks">
+          <i class="zmdi zmdi-link"></i><img src="C:/Users/em/Desktop/sam/images/plus-removebg-preview.png" width="20" height="20">  Add Task
+        </a>
+      </li>
+      <li>
+        <a href="/status" id="status">
+          <i class="zmdi zmdi-widgets"></i></i><img src="C:/Users/em/Desktop/sam/images/paper-icon-flat-0.jpg" width="20" height="20">  Status
+        </a>
+      </li>
+      <li  style="height : 120px">
+        <a href="/download" id="download">
+          <i class="zmdi zmdi-calendar"></i><img src="C:/Users/em/Desktop/sam/images/download.ico" width="20" height="20">  Download
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="zmdi zmdi-calendar"></i>
+        </a>
+      </li>
+      <li>
+      <a href="/storageClient">
+        <i class="zmdi zmdi-info-outline"></i><img src="C:/Users/em/Desktop/sam/images/storage.png" width="20" height="20"> Storage
+      </a>
+    </li>
+      <li>
+      <a href="/settingsClients">
+        <i class="zmdi zmdi-info-outline"></i></i><img src="C:/Users/em/Desktop/sam/images/freestock_571081924-removebg-preview.png" width="20" height="20"> Settings
+      </a>
+    </li>
+    <li>
+      <a href="/logout">
+        <i class="zmdi zmdi-info-outline"></i><img src="C:/Users/em/Desktop/sam/images/lock-removebg-preview.png" width="20" height="20"> Logout
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <div style="font-size:12px">COPYRIGHT © 2018 - 21 · GRUMPYTEXT.COM,
+         ALL RIGHTS RESERVED.</div>
+      </a>
+    </li>
+    </ul>
+  </div>
+  <!-- Content -->
+  <div id="content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                      role = "button" aria-haspopup="true" aria-expanded="false">
+                  Hi!   {{user.name}} 😊</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/logout">Logout</a></li>
+                  </ul>
+                </li>
+
+            </ul>
+      </div>
+    </nav>
+
+
+
+    <div class="container-fluid">
+      <div id="append_task">
+
+<form class="form-article" id="frmUploader" enctype="multipart/form-data" method="post">
+  <h2 class="form-signin-heading text-center">New Task</h2><br/>
+  <label>Article Topic (example - how to excel at sports)<span style="color:red;">*</span></label><input type="text" name="topic" value="{{topic}}" class="form-control" placeholder="Article Topic" require="true" autofocus="true"><br/>
+  <label>Keywords any (separated with commas)</label><input type="text" name="keywords" value="{{keywords}}" class="form-control" placeholder="Keywords" require="false" autofocus="true"><br/>
+<label>Words<span style="color:red;">* </span><span id="wordSpan" style="color:blue;">({{subscriptionTCR}} words remaining total this month)</span></label><input type="number" name="words" id="words" class="form-control" placeholder="Number of words" require="true" autofocus="true" value={{words}} {{disableWords}}><br/>
+<div class="row">
+  <div class="form-group col-xs-8 col-sm-4">
+<label for="audience">Audience<span style="color:red;">*</span> <span id="wordSpan" style="color:blue;">(multiselect / [Ctrl+Click]) </span></label><br/>
+<select data-placeholder="Choose tags ..." name="audience" multiple class="chosen-select" required>
+   <option value="Buyers">Buyers</option>
+   <option value="Sellers">Sellers</option>
+   <option value="Investors">Investors</option>
+   <option value="Locals/Newcomers">Locals/Newcomers</option>
+ </select><br/>
+</div>
+<div class="form-group col-xs-8 col-sm-4">
+<label for="postType">Post Type</label><span style="color:red;">*</span><br/>
+<select data-placeholder="Choose tags ..." name="postType" class="chosen-select btn btn-primary" onchange="CheckColors(this.value)" required>
+  <option value="">Select</option>
+   <option value="Lists">Lists</option>
+ <option value="How-To">How-To</option>
+ <option value="Compare and Contrast">Compare and Contrast</option>
+ <option value="Industry News">Industry News</option>
+ <option value="Local News">Local News</option>
+ <option value="Failures and What Not to Do">Failures and What Not to Do</option>
+ <option value="Research or Facts and Stats">Research or Facts and Stats</option>
+ <option value="Other">Other...</option>
+</select><br/>
+<label for="otherPostType"></label><br/>
+<input type="text" name="otherPostType" id="otherPostType" value="{{inputOther}}" placeholder="Other..." class="form-control"><br/>
+</div>
+</div>
+
+<label>Your Business Blog/Website link (To understand better)<span style="color:red;">*</span></label><input type="text" name="website" value="{{website}}" class="form-control" placeholder="https://www...." require="true" autofocus="true"><br/></br>
+<label>Background info (Include text, videos, PowerPoints, PDFs, infographics, URLs, etc. for the reference.)<span style="color:red;">*</span></label><br/>
+<label><span id="upFiles" style="color:blue;">max 4 files (< 1 MB) (Hold Ctrl button for selecting multiple files)</span></label>
+<input type="file" class="btn btn-primary" name="FileUpload" multiple />
+ <br>
+<input type="text" name="otherdetails" value="{{otherdetails}}" class="form-control" placeholder="Anything else we should know?" require="true" autofocus="true"></br>
+<button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
+</form>
+
+</div>
+</div>
+</div>
+
+
+</div>
+<script>
+$("#otherPostType").hide();
+function CheckColors(val){
+ if(val=='Other')
+ {
+   $("#otherPostType").prop('disabled', false);
+   $("#otherPostType").prop('required', true);
+   $("#otherPostType").show();
+ }
+ else
+ {
+ $("#otherPostType").prop('disabled', true);
+ $("#otherPostType").prop('required', false);
+ $("#otherPostType").hide();
+}
+}
+
+$('#words').on("blur",function(){
+var words = $('#words').val();
+if(words > {{subscriptionTCR}})
+{
+  alert("Word limit excceded");
+}
+});
+
+
+
+</script>
+
+
+</body>
+</html>
